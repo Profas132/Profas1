@@ -18,11 +18,9 @@ public class TableSpawner : MonoBehaviour
         Debug.Log("On triger");
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Instantiate(Ingredient, collision.transform);
             Ingredient.SetActive(true);
             Ingredient.transform.position = player.transform.position;
-            //Debug.Log("Take Ingred");
-            //Instantiate(Ingredient, collision.transform);
-            GetComponent<IngredPrefab>().IngredGenirateOnTable();
         }
     }
 }

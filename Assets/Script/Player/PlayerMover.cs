@@ -15,10 +15,25 @@ public class PlayerMover : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
+    { 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 movement = new Vector3(horizontal, vertical, 0f);
         rb.AddForce(movement * moveSpeed * 200);
+
+        Debug.Log(horizontal);
+        if (horizontal > 0)
+        {
+            FlipPerson(0);
+        }
+        else if (horizontal < 0)
+        {
+            FlipPerson(-180);
+        }
+    }
+
+    private void FlipPerson(int y)
+    {
+        transform.eulerAngles = new Vector3(0, y, 0);
     }
 }

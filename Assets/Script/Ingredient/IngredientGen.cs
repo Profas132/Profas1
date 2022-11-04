@@ -6,11 +6,11 @@ using UnityEngine;
 public class IngredientGen : ScriptableObject
 {
     public Ingredient[] ingredients;
-    public int index = 0;
+    public int ind = 0;
 
     public Ingredient Generate(int index)
-    { 
-
-        return ingredients[index++ % ingredients.Length];
+    {
+        ind = index;
+        return ingredients[ind++ % ingredients.Length];
     }
 }

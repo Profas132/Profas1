@@ -8,10 +8,10 @@ public class IngredPrefab : MonoBehaviour
     private Image imageOfIngred;
     [SerializeField] private int index;
 
-    public void IngredGenirateOnTable()
+    private void Start()
     {
         imageOfIngred = GetComponent<Image>();
-        
+
         ingredient = ingredientGen.Generate(index);
         imageOfIngred.sprite = ingredient.PhotoOfIngerdient;
     }
