@@ -5,12 +5,12 @@ public class IngredPrefab : MonoBehaviour
 {
     [SerializeField] private IngredientGen ingredientGen;
     private Ingredient ingredient;
-    private Image imageOfIngred;
+    private SpriteRenderer imageOfIngred;
     [SerializeField] private int index;
 
     private void Start()
     {
-        imageOfIngred = GetComponent<Image>();
+        imageOfIngred = GetComponent<SpriteRenderer>();
 
         ingredient = ingredientGen.Generate(index);
         imageOfIngred.sprite = ingredient.PhotoOfIngerdient;

@@ -10,7 +10,7 @@ public class TableSpawner : MonoBehaviour
 
     void Start()
     {
-        
+        Instantiate(Ingredient, transform);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
