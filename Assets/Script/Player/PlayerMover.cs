@@ -35,7 +35,7 @@ public class PlayerMover : MonoBehaviour
         } else if (horizontal == 0) isRuning = false;
 
         anim.SetBool ("isRuning", isRuning);
-        anim.SetFloat("vertical", vertical);
+        anim.SetFloat("Vertical", vertical);
     }
 
     private void FlipPerson(int y)

@@ -5,17 +5,16 @@ public class IngredPrefab : MonoBehaviour
 {
     [SerializeField] private IngredientGen ingredientGen;
     private Ingredient ingredient;
-    private SpriteRenderer imageOfIngred;
+    public Sprite imageOfIngred;
     public int index;
 
     private void Start()
     {
-        //index = GetComponentInParent<TableSpawner>().index;
-        imageOfIngred = GetComponent<SpriteRenderer>();
-
+        ingredient = ingredientGen.Generate(index);
+        SpriteRenderer spriteOfIngred = GetComponent<SpriteRenderer>();
         //Debug.Log($"{gameObject.name} {index}");
 
-        ingredient = ingredientGen.Generate(index);
-        imageOfIngred.sprite = ingredient.PhotoOfIngerdient;
+        imageOfIngred = ingredient.PhotoOfIngerdient;
+        spriteOfIngred.sprite = ingredient.PhotoOfIngerdient;
     }
 }
