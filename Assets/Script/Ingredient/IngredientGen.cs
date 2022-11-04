@@ -10,7 +10,6 @@ public class IngredientGen : ScriptableObject
 
     public Ingredient Generate(int index)
     {
-        ind = 1;
-        return ingredients[ind++ % ingredients.Length];
+        return ingredients[index++ % ingredients.Length];
     }
 }
