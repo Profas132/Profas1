@@ -38,10 +38,4 @@ public class TableSpawner : MonoBehaviour
         //ingred = Instantiate(ingradItem, player.transform) as IngredPrefab;
         //ingred.index = index;
     }
-
-    public void cum()
-    {
-        Debug.Log("CUM");
-        Destroy(gameObject);
-    }
 }
