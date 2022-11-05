@@ -18,6 +18,10 @@ public class Karman : MonoBehaviour
         {
             inventary.isFull[i] = false;
         }
+        //else if (transform.childCount > 0)
+        //{
+
+        //}
     }
 
     public void DropItem()

@@ -4,6 +4,7 @@ using UnityEngine;
 [Serializable]
 public class Ingredient
 {
+    //[]
     public Sprite PhotoOfIngerdient;
     public string Name;
     public int tagOfIngredient;

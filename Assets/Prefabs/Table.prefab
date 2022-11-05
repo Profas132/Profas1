@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2987976472864441239}
   - component: {fileID: 2987976472864441238}
   - component: {fileID: 2987976472864441237}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,5 +153,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredient: {fileID: 6369085130863657771, guid: 29a7331c9541f4d44a4aeb2adbb30718, type: 3}
   ingradItem: {fileID: -3125566040022389223, guid: bedadb30f64050149b4420df3458a04a, type: 3}
-  player: {fileID: 0}
-  index: 0
+  indexOnTable: 0
