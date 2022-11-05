@@ -10,4 +10,9 @@ public class DialogTextGen : ScriptableObject
         int i = Random.Range(0, dialogTexts.Length);
         return dialogTexts[i++ % dialogTexts.Length];
     }
+
+    public bool IsValidItem(int indexOfItem, int indexItemInText)
+    {
+        return (indexOfItem == indexItemInText);
+    }
 }

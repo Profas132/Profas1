@@ -5,21 +5,8 @@ using UnityEngine;
 public class TakeItemOnTable : MonoBehaviour
 {
     [SerializeField] private float rayDistance;
-    [SerializeField] private Inventary inventary;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Transform takePose;
-
-    //private GameObject gameObject;
-    private void Start()
-    {
-        inventary = GetComponentInChildren<Inventary>();
-    }
-
-    //private void OnDrawGizmosSelected()
-    //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(takePose.position, rayDistance);
-    //}
 
     void Update()
     {   
@@ -29,15 +16,6 @@ public class TakeItemOnTable : MonoBehaviour
         Debug.DrawRay(transform.position, -transform.up * (rayDistance + 2.5f), Color.red);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Collider2D[] tables = Physics2D.OverlapCircleAll(takePose.position, rayDistance, layerMask);
-            //if (tables.Length != 0)
-            //{
-            //    for (int i = 0; i < tables.Length; i++)
-            //    {
-            //        tables[i].GetComponent<TableSpawner>().cum();
-            //    }
-            //}
-
             RaycastHit2D hitInfoRight = Physics2D.Raycast(transform.position, transform.right, rayDistance, layerMask);
             RaycastHit2D hitInfoLeft = Physics2D.Raycast(transform.position, -transform.right, rayDistance, layerMask);
             RaycastHit2D hitInfoUp = Physics2D.Raycast(transform.position, transform.up, rayDistance, layerMask);
@@ -50,7 +28,15 @@ public class TakeItemOnTable : MonoBehaviour
                 {
                     table.TakeItem(transform);
                 }
+
+                NPSDialog dialog = hitInfoRight.transform.GetComponent<NPSDialog>();
+                if (dialog)
+                {
+                    //dialog.DEBUG();
+                    dialog.CheckItemInKarmani(transform);
+                }
             }
+            else
             if (hitInfoLeft)
             {
                 TableSpawner table = hitInfoLeft.transform.GetComponent<TableSpawner>();
@@ -58,7 +44,15 @@ public class TakeItemOnTable : MonoBehaviour
                 {
                     table.TakeItem(transform);
                 }
+
+                NPSDialog dialog = hitInfoRight.transform.GetComponent<NPSDialog>();
+                if (dialog)
+                {
+                    //dialog.DEBUG();
+                    dialog.CheckItemInKarmani(transform);
+                }
             }
+            else
             if (hitInfoUp)
             {
                 TableSpawner table = hitInfoUp.transform.GetComponent<TableSpawner>();
@@ -66,13 +60,28 @@ public class TakeItemOnTable : MonoBehaviour
                 {
                     table.TakeItem(transform);
                 }
+
+                NPSDialog dialog = hitInfoRight.transform.GetComponent<NPSDialog>();
+                if (dialog)
+                {
+                    //dialog.DEBUG();
+                    dialog.CheckItemInKarmani(transform);
+                }
             }
+            else
             if (hitInfoDown)
             {
                 TableSpawner table = hitInfoDown.transform.GetComponent<TableSpawner>();
                 if (table)
                 {
                     table.TakeItem(transform);
+                }
+
+                NPSDialog dialog = hitInfoRight.transform.GetComponent<NPSDialog>();
+                if (dialog)
+                {
+                    //dialog.DEBUG();
+                    dialog.CheckItemInKarmani(transform);
                 }
             }
         }

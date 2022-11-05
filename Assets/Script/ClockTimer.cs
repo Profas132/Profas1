@@ -1,20 +1,35 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClockTimer : MonoBehaviour
 {
-    [SerializeField] private Transform clockArrow;
+    [SerializeField] private float time;
+    private Image timerImage;
+    [HideInInspector]public float _timeLeft = 0f;
 
-    void Update()
+    private void Start()
     {
-        float z = 45;
-        if (z >= 360)
-        {
-            z = 0;
-        }
+        timerImage = GetComponent<Image>();
+        //ManagerScene.StopGame += DisableTimer;
+        _timeLeft = time;
+        StartCoroutine(StartTimer());
+    }
 
-        z += Time.deltaTime;
-        //clockArrow.rotation = new Quaternion(0,0,z);
+    private IEnumerator StartTimer()
+    {
+        while (_timeLeft > 0)
+        {
+            _timeLeft -= Time.deltaTime;
+            var normalizedValue = Mathf.Clamp(_timeLeft / time, 0.0f, 1.0f);
+            timerImage.fillAmount = normalizedValue;
+            yield return null;
+        }
+    }
+
+    public void DisableTimer()
+    {
+        //ManagerScene.StopGame -= DisableTimer;
+        Destroy(gameObject);
     }
 }
