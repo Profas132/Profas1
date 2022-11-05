@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NPSDialog : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private TextMeshProUGUI text; 
+
     void Start()
     {
-        
+        text.text = "Эй сталкер, Я тебя спас, но в благородство играть не буду";
     }
 
     // Update is called once per frame
