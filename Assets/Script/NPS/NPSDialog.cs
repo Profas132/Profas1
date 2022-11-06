@@ -5,6 +5,13 @@ public class NPSDialog : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private DialogTextGen dialogTextGen;
+    [SerializeField] private UIElements UI;
+
+    [Space][Header("Slider")]
+    [SerializeField] private SliderValue slider;
+    [SerializeField] private float sliderAddedTime;
+    [SerializeField] private float sliderInvalidTime;
+
     private DialogText currentTextGen;
 
     void Start()
@@ -12,26 +19,33 @@ public class NPSDialog : MonoBehaviour
         GenerateNewDialogText();
     }
 
-    public void DEBUG()
-    {
-        Debug.Log("Привет");
-    }
-
     public void CheckItemInKarmani(Transform collition)
     {
         Inventary inventary = collition.GetComponentInChildren<Inventary>();
         for (int i = 0; i < inventary.karmani.Length; i++)
         {
-            if (inventary.isFull[i] == true && dialogTextGen.IsValidItem(inventary.ingredInInventory[i].index, currentTextGen.indexOfItems))
+            if (inventary.isFull[i] == true)
             {
-                inventary.karmani[i].DropItem();
-                GenerateNewDialogText();
-                Debug.Log("Правильно");
-                break;
+                if(!dialogTextGen.IsValidItem(inventary.ingredInInventory[i].index, currentTextGen.indexOfItems))
+                {
+                    //inventary.karmani[i].DropItem();
+                    //UI.score += 1;
+                    slider.currentTime -= sliderInvalidTime;
+                    Debug.Log("Не правильно");
+                }
+                if (dialogTextGen.IsValidItem(inventary.ingredInInventory[i].index, currentTextGen.indexOfItems)) 
+                {
+                    inventary.karmani[i].DropItem();
+                    UI.score += 1;
+                    slider.currentTime += sliderAddedTime;
+                    GenerateNewDialogText();
+                    Debug.Log("Правильно");
+                    break;
+                }
             }
-        }
+        }           
     }
-
+        
     private void GenerateNewDialogText()
     {
         currentTextGen = dialogTextGen.Ganerate();

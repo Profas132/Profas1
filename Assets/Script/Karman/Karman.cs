@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Karman : MonoBehaviour
@@ -28,8 +26,8 @@ public class Karman : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            GameObject.Destroy(child.gameObject);
             inventary.ingredInInventory.RemoveAt(i);
+            GameObject.Destroy(child.gameObject);
         }
     }
 }

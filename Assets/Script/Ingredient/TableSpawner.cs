@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TableSpawner : MonoBehaviour
 {
+    [SerializeField] private KarmanUI karmanUI;
     [SerializeField] private IngredPrefab ingredient;
     [SerializeField] private IngredPrefab ingradItem;
     public int indexOnTable;
@@ -16,7 +15,7 @@ public class TableSpawner : MonoBehaviour
     }
 
     public void TakeItem(Transform collition)
-    {
+    {   
         Inventary inventary = collition.GetComponentInChildren<Inventary>();
         for (int i = 0; i < inventary.karmani.Length; i++)
         {
@@ -33,6 +32,7 @@ public class TableSpawner : MonoBehaviour
                 inventary.karmani[i].DropItem();
                 break;
             }
+            //karmanUI.UpdateKarmani();
         }
         //IngredPrefab ingred;
         //ingred = Instantiate(ingradItem, player.transform) as IngredPrefab;

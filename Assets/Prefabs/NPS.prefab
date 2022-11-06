@@ -101,6 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   dialogTextGen: {fileID: 11400000, guid: 179a103c7e77c9341bfbede69683bef0, type: 2}
+  UI: {fileID: 0}
+  slider: {fileID: 0}
+  sliderAddedTime: 5
+  sliderInvalidTime: 2
 --- !u!95 &5830162486750932492
 Animator:
   serializedVersion: 4

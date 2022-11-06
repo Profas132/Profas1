@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TakeItemOnTable : MonoBehaviour
@@ -14,6 +12,7 @@ public class TakeItemOnTable : MonoBehaviour
         Debug.DrawRay(transform.position, -transform.right * rayDistance, Color.red);
         Debug.DrawRay(transform.position, transform.up * rayDistance, Color.red);
         Debug.DrawRay(transform.position, -transform.up * (rayDistance + 2.5f), Color.red);
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             RaycastHit2D hitInfoRight = Physics2D.Raycast(transform.position, transform.right, rayDistance, layerMask);
@@ -45,7 +44,7 @@ public class TakeItemOnTable : MonoBehaviour
                     table.TakeItem(transform);
                 }
 
-                NPSDialog dialog = hitInfoRight.transform.GetComponent<NPSDialog>();
+                NPSDialog dialog = hitInfoLeft.transform.GetComponent<NPSDialog>();
                 if (dialog)
                 {
                     //dialog.DEBUG();
@@ -61,7 +60,7 @@ public class TakeItemOnTable : MonoBehaviour
                     table.TakeItem(transform);
                 }
 
-                NPSDialog dialog = hitInfoRight.transform.GetComponent<NPSDialog>();
+                NPSDialog dialog = hitInfoUp.transform.GetComponent<NPSDialog>();
                 if (dialog)
                 {
                     //dialog.DEBUG();
@@ -77,7 +76,7 @@ public class TakeItemOnTable : MonoBehaviour
                     table.TakeItem(transform);
                 }
 
-                NPSDialog dialog = hitInfoRight.transform.GetComponent<NPSDialog>();
+                NPSDialog dialog = hitInfoDown.transform.GetComponent<NPSDialog>();
                 if (dialog)
                 {
                     //dialog.DEBUG();
