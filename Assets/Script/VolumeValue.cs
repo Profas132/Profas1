@@ -9,11 +9,10 @@ public class VolumeValue : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         _audioSource.volume = _volume;
+        _volume = Global.VolumeV;
     }
     public void SetVoume(float value)
     {

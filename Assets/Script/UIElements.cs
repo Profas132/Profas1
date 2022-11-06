@@ -38,6 +38,6 @@ public class UIElements : MonoBehaviour
 
         float timerScore = timer.time - timer.currentTime;
         dataInWindow.text = $"Выполнено: {score}*5 => {score * 5}. Прошло времени: {timerScore}сек.";
-        totalScore.text = $"Итоговый счёт: {(score * 5 * timerScore)%100}";
+        totalScore.text = $"Итоговый счёт: {(score * 5 * timerScore)}";
     }
 }

@@ -1496,6 +1496,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2987976472864441257, guid: c081c50637de63745a9e103e88a13d75, type: 3}
   m_PrefabInstance: {fileID: 1667725974}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1441315383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5830162486750932487, guid: 99c3e75ad80760248934525f6a85bada, type: 3}
+  m_PrefabInstance: {fileID: 5830162485487968576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1441315390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441315383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5927bc1f78258b3459d9dc9b9affd40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1469334173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2987976472864441257, guid: c081c50637de63745a9e103e88a13d75, type: 3}
@@ -2957,7 +2974,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5348243092954615594, guid: 9eec52a3c0ec4284b81b6cc587dd8c51, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5348243092954615597, guid: 9eec52a3c0ec4284b81b6cc587dd8c51, type: 3}
       propertyPath: m_RootOrder
