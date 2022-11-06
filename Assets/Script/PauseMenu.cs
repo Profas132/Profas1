@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
                 OnPause();
                 pouseButton.SetActive(false);
                 pouseMenu.SetActive(true);
+                
             }
             else if (Time.timeScale == 0)
             {
@@ -35,10 +36,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void SetMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
     public void SetGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
