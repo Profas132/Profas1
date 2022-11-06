@@ -7,5 +7,4 @@ public class VolumeChange : MonoBehaviour
     {
         Global.VolumeV = val;
     }
-
 }
