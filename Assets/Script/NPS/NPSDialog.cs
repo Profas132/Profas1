@@ -51,7 +51,7 @@ public class NPSDialog : MonoBehaviour
     private void GenerateNewDialogText()
     {
         currentTextGen = dialogTextGen.Ganerate();
-        //audioSource.clip = ;
+        audioSource.clip = currentTextGen.audioClip;
         //text.text = "Эй сталкер, Я тебя спас, но в благородство играть не буду";
         audioSource.Play();
         text.text = currentTextGen.dialogText;

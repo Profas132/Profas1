@@ -3016,6 +3016,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 168725757836997288, guid: 99c3e75ad80760248934525f6a85bada, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5830162486750932487, guid: 99c3e75ad80760248934525f6a85bada, type: 3}
       propertyPath: m_Name
       value: NPS
