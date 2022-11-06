@@ -134,25 +134,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0879dd4744972d04f9c8281c1d8a2174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &49194060 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 49194060, guid: c14dbf0cba5067046b41cce3cb6a1356, type: 3}
+--- !u!114 &49194065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4156983958621270915, guid: c14dbf0cba5067046b41cce3cb6a1356, type: 3}
   m_PrefabInstance: {fileID: 6482408611651821528}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &49194065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49194060}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d6d63e54e0c6e740b33a0b1729f9dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 30
-  currentTime: 0
 --- !u!4 &155420416 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2987976472864441257, guid: c081c50637de63745a9e103e88a13d75, type: 3}
@@ -2773,26 +2765,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 49194062, guid: c14dbf0cba5067046b41cce3cb6a1356, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 49194062, guid: c14dbf0cba5067046b41cce3cb6a1356, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 49194062, guid: c14dbf0cba5067046b41cce3cb6a1356, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 49194060}
-    - target: {fileID: 49194062, guid: c14dbf0cba5067046b41cce3cb6a1356, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 49194062, guid: c14dbf0cba5067046b41cce3cb6a1356, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1527086894, guid: c14dbf0cba5067046b41cce3cb6a1356, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

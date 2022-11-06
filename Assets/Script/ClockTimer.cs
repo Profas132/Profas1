@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 public class ClockTimer : MonoBehaviour
 {
+    [SerializeField] private UIElements uIElements;
     public float time;
     private Image timerImage;
-    [HideInInspector]public float currentTime = 0f;
+    public float currentTime = 0f;
 
     private void Start()
     {
@@ -25,6 +26,11 @@ public class ClockTimer : MonoBehaviour
             timerImage.fillAmount = normalizedValue;
             yield return null;
         }
-        GetComponentInParent<UIElements>().EndGame(true);
+        GameWin();
+    }
+
+    private void GameWin()
+    {
+        uIElements.EndGame(true);
     }
 }

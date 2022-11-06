@@ -6,7 +6,8 @@ public class SliderValue : MonoBehaviour
 {
     public float time;
     private Slider slider;
-    [HideInInspector] public float currentTime = 0f;
+    [SerializeField] private UIElements uIElements;
+    public float currentTime = 0f;
 
     private void Start()
     {
@@ -25,6 +26,11 @@ public class SliderValue : MonoBehaviour
             slider.value = normalizedValue;
             yield return null;
         }
-        GetComponentInParent<UIElements>().EndGame(false);
+        GameWin();
+    }
+ 
+    private void GameWin()
+    {
+        uIElements.EndGame(false);
     }
 }
