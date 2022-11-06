@@ -12,6 +12,8 @@ public class NPSDialog : MonoBehaviour
     [SerializeField] private float sliderAddedTime;
     [SerializeField] private float sliderInvalidTime;
 
+    [Space]
+    [SerializeField] private AudioClip invalidClip;
     private DialogText currentTextGen;
     private AudioSource audioSource;
 
@@ -32,6 +34,8 @@ public class NPSDialog : MonoBehaviour
                 {
                     //inventary.karmani[i].DropItem();
                     //UI.score += 1;
+                    audioSource.clip = invalidClip;
+                    audioSource.Play();
                     slider.currentTime -= sliderInvalidTime;
                     Debug.Log("Не правильно");
                 }
