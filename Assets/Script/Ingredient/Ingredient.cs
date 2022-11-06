@@ -6,7 +6,7 @@ public class Ingredient
 {
     //[]
     public Sprite PhotoOfIngerdient;
-    public string Name;
+    public string NameOfIngerdient;
     //public int tagOfIngredient;
     public Category categoryOfIngredients;
 

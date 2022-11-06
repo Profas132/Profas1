@@ -1,20 +1,21 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class IngredPrefab : MonoBehaviour
 {
     [SerializeField] private IngredientGen ingredientGen;
-    private Ingredient ingredient;
+    private Ingredient currentIngredient;
     public Sprite imageOfIngred;
+    public string nameOfIngerdient;
     public int index;
 
     private void Start()
     {
-        ingredient = ingredientGen.Generate(index);
+        currentIngredient = ingredientGen.Generate(index);
         SpriteRenderer spriteOfIngred = GetComponent<SpriteRenderer>();
         //Debug.Log($"{gameObject.name} {index}");
 
-        imageOfIngred = ingredient.PhotoOfIngerdient;
-        spriteOfIngred.sprite = ingredient.PhotoOfIngerdient;
+        nameOfIngerdient = currentIngredient.NameOfIngerdient;
+        imageOfIngred = currentIngredient.PhotoOfIngerdient;
+        spriteOfIngred.sprite = currentIngredient.PhotoOfIngerdient;
     }
 }

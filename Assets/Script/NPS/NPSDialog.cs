@@ -13,9 +13,11 @@ public class NPSDialog : MonoBehaviour
     [SerializeField] private float sliderInvalidTime;
 
     private DialogText currentTextGen;
+    private AudioSource audioSource;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         GenerateNewDialogText();
     }
 
@@ -49,8 +51,9 @@ public class NPSDialog : MonoBehaviour
     private void GenerateNewDialogText()
     {
         currentTextGen = dialogTextGen.Ganerate();
-
+        //audioSource.clip = ;
         //text.text = "Эй сталкер, Я тебя спас, но в благородство играть не буду";
+        audioSource.Play();
         text.text = currentTextGen.dialogText;
     }
 }
